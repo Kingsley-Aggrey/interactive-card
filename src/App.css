@@ -1,38 +1,269 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
   display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.Head {
+  position: relative;
+  background-image: url("../public/images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 40vw;
+  height: 100%;
+}
+
+
+.card {
+  display: flex;
+  color: white;
+  position: absolute;
+  width: 16.5rem;
+  height: 8rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.Head .frontCard {
   flex-direction: column;
+  justify-content: space-between;
+  background-image: url("../public//images/bg-card-front.png");
+  padding: 1.2rem;
+  z-index: 1;
+}
+
+.Head .frontCard img {
+  width: 3.5rem;
+}
+
+.Head .frontCard h4 {
+
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.frontCard>div {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.Head .backCard {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-image: url("../public//images/bg-card-back.png");
+  padding: 1.2rem;
+}
+
+.Head .backCard p {
+  font-size: 0.75rem;
+  width: 100%;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+}
+
+.container form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22rem;
+}
+
+.container form>div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+form input {
+  padding: 0.6rem 1rem;
+  font-size: 1.3rem;
+  border: 2px solid hsl(270, 3%, 87%);
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.expAndCVC {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  width: 100%;
+}
+
+.expAndCVC .exp {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 45%;
+}
+
+.expAndCVC .exp>div {
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .exp>div input {
+  width: 25%;
+}
+
+
+.expAndCVC .cvc {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 52%;
+}
+
+.expAndCVC .cvc input {
+  width: 70% !important;
+}
+
+.isError {
+  border: 2px solid hsl(0, 100%, 51%);
+}
+
+.erroMsg {
+  color: red;
+  font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.3rem;
+}
+
+
+.thank-you {
+  display: flex;
+  flex-direction: column;
+  width: 22rem;
+}
+
+
+
+button {
+  height: 3.3rem;
+  border-radius: 10px;
+  border: none;
+  background-color: hsl(278, 68%, 11%);
   color: white;
+  font-size: 1.3rem;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  cursor: pointer;
+  background-color: hsl(278, 66%, 18%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.thank-you {
+  display: flex;
+  flex-direction: column;
+}
+
+.thank-you img {
+  width: 4rem;
+  align-self: center;
+}
+
+.thank-you h1 {
+  text-align: center;
+  font-weight: 500;
+  padding-bottom: 0 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.thank-you p {
+  color: hsl(279, 6%, 55%);
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+
+@media screen and (min-width: 460px) {
+  .Head .frontCard {
+    top: 8rem;
+    right: -4rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Head .backCard {
+    right: -8.5rem;
+    bottom: 8rem;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .Head {
+    width: 100%;
+    height: 36vh;
+    background-image: url("../public/images/bg-main-mobile.png");
+  }
+
+  .Head>.frontCard {
+    left: 1rem;
+    bottom: -3.2rem;
+  }
+
+  .Head .backCard {
+    right: 1rem;
+    top: 1.8rem;
+  }
+
+  .container {
+    padding: 1.3rem;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  .container form {
+    height: 100%;
+    width: 100%;
+  }
+
+  form label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  form input {
+    padding: 0.6rem 1rem;
   }
 }
