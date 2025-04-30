@@ -26,7 +26,7 @@ Users should be able to:
 - See hover, active, and focus states for interactive elements on the page
 
 ### Screenshot
-All screenshots of the my solutions can be found in the "public/ScreenShots/" folder
+All screenshots of my solutions can be found in the "public/ScreenShots/" folder
 
 
 ### Links
